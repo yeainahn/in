@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12testbreak.html</title>
+<style>
+    *{font-size: 21pt;}
+</style>
+<script>
+  var su=0, hap=0, count=0;
+  function mynumber() {
+        for(var count=0; count<10; count=count+1){
+                su= su+1;
+                if (su==5){break;} 
+                // total+= count;
+                document.write(su,' ');
+                hap= hap + su ;
+
+       }
+        document.write('합계='+ hap);
+  }
+
+
+</script>
+
+<script>
+</script>
+</head>
+<body>
+    
+    <h2> 12testbreak.html </h2>
+    <button onclick="mynumber()">for반복문</button> 
+    <button onclick="mytest()">while반복문</button><br>
+    <div id="display"></div>
+</body>
+</html>

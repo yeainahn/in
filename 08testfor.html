@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08testfor.html</title>
+<style>
+    * {font-size: 20pt;}
+</style>    
+<script>
+
+function mygugudan(){
+            su=0, result= '';
+            for( var cnt=1; cnt<=5; cnt++){
+            su++
+            // document.write(su, '');
+            result +=  su + ' ';
+            document.getElementById('display').innerHTML = result ;
+
+            }
+
+        }
+
+</script>
+</head>
+<body>
+    <h2>08testfor.html</h2>
+    <button onclick="mygugudan()">1-5숫자출력</button> 
+    <p></p>
+    <img src="./images/pen2.jpg" height="300">
+    <div id="display">
+      
+    </div>
+
+    
+
+</body>
+</html>

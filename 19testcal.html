@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .relative{
+            position: relative;
+            width: 427px;
+            height: 180px;
+            background-image:  url('images/bgpizza.jpg');
+            background-position: left;
+        }
+
+        .absolute{
+            position: absolute;
+            right: 0;
+            width: 213px;
+            height: 180px;
+            background-image:  url('images/bgpizza.jpg');
+            background-position: right;
+        }
+    </style>
+
+<script>
+    function changePizzaL(name) {
+        var filename = "url('images/" + name + ".jpg')";
+        preview_l.style.backgroundImage = filename;
+    }
+
+    function changePizzaR(name) {
+        var filename = "url('images/" + name + ".jpg')";
+        // alert(filename);
+        preview_r.style.backgroundImage = filename;
+    }
+
+    function mycal(){
+       var data='',  info='', msg='' ;
+       var price1=0, Gdrink=0, price2=0, Ganju=0, Gtotal=0;
+
+       var  my_drink = document.myform.drink.value;
+       var  num1 = document.myform.count1.value;
+       var  my_anju = document.myform.anju.value;
+       var  num2 = document.myform.count2.value;
+
+      if(my_drink=="소주"){ price1=3000;}
+      else if(my_drink=="맥주"){ price1=2000;}
+      else if(my_drink=="콜라"){ price1=5000;}
+      else{ }
+
+      if(my_anju=="제육볶음"){ price2=8000;}
+      else if(my_anju=="두부김치"){ price2=10000;}
+      else if(my_anju=="골뱅무침"){ price2=7000;}
+      else if(my_anju=="김치파전"){ price2=5000;}
+      else{ }
+
+      Gdrink = parseInt(price1)*parseInt(num1);
+      Ganju =  parseInt(price2)*parseInt(num2);
+
+      data = ' 음료:' +  my_drink + '\t\t주문수량:' + num1 +'\t\t합계:' + Gdrink + '원\n';
+      data += ' 안주:' +  my_anju + '\t\t주문수량:' + num2 +'\t\t합계:' + Ganju + '원\n';
+      data += ' 총합계:' +  (Gdrink+Ganju) +'원';
+      document.myform.result.value = data ;
+
+      info = ' 음료:' +my_drink+'&nbsp;&nbsp;주문수량:'+num1+'&nbsp;&nbsp;합계:' + Gdrink + '원\<br>';
+      info += ' 안주:' +my_anju+'&nbsp;&nbsp;주문수량:'+num2+'&nbsp;&nbsp;합계:' + Ganju + '원\<br>';
+      info += ' 총합계:' +  (Gdrink+Ganju) +'원';
+      document.getElementById('display').innerHTML = info;
+
+    }//end
+</script>
+</head>
+<p> <b> 미스터음료 & 미스터안주피자</b>
+    <div id="preview_l" class="relative">
+        <div id="preview_r" class="absolute"> </div>
+    </div>
+    
+<body>
+    <!-- 소주(3000원) 맥주(2000원) 콜라(5000원)  -->
+    <!-- 제육볶음(8000원) 두부김치(10000원) 골뱅무침(7000원) 김치파전(5000월)  -->
+    <h1> <font color="green"> 🍺슬기로운 음주생활🍺 </font></h1>
+    
+    <form name="myform">
+        <table border="0">
+            <tr> 
+				<td width=80><b>술종류<b></td>
+				<td width=50><b>갯수 </b></td>
+				<td width=80><b>안주종류</b></td>
+				<td width=50><b>갯수<b></td>
+			</tr>
+			<tr>
+			<td width = 80>
+				<select name="drink" onchange="changePizzaL(value)">
+                    <option value="소주"> 소주(3000원)</option>
+                    <option value="맥주"> 맥주(2000원)</option>
+                    <option value="콜라"> 콜라(5000원)</option>
+                </select>
+			</td>
+			<td width = 50>
+				<input type="text" name="count1">
+			</td>
+            <td width = 80>
+                <select name="anju" onchange="changePizzaR(value)">
+                   <option value="제육볶음"> 제육볶음(8000원)</option>
+                   <option value="두부김치"> 두부김치(10000원)</option>
+                   <option value="골뱅무침"> 골뱅무침(7000원)</option>
+                   <option value="김치파전"> 김치파전(5000원)</option>
+                </select>
+               </td>
+               <td width=50>
+               <input type="text" name="count2" >
+               </td></tr>
+        </table>
+        <p></p>
+        <input type="button"  value="슬기로운 주문하기"
+			  onClick="mycal( )"  style="font-size:20pt;"> <p>
+
+		 <textarea name="result" rows="10"  cols="70" 
+			style="font-size:12pt; background-color:#abcdef">주문내역표시
+		</textarea>
+    </form>
+
+    <p></p>
+    <img src="./images/main_4.jpg" width="550" height="70">
+    <div id="display">
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09testfor.html</title>
+    <style>
+        *{font-size: 20pt;}
+    </style>
+    <script>
+        function mytest(){ // 1 2 3 4 5  합계=15
+            var total=0;
+            var su=0 ;
+            for(var count=0; count<5;  count++){
+                su++;
+                total+= count;
+                document.write(su, ' ');
+            }
+                document.write('합계=', total);
+        }//end
+    </script>
+</head>
+<body>
+        <h2>09testfor.html</h2>
+        <button onclick="mytest()">숫자합</button>
+</body>
+</html>

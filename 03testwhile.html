@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03testwhile.html</title>
+<style>
+    *{font-size: 21pt;}
+</style>
+<script>
+  var su=0, hap=0, count=0;
+  function mynumber() {
+    for(var count=0; count<10; count=count+1){
+                su= su+1;
+                if (su==4){continue;} 
+                // total+= count;
+                document.write(su,' ');
+                hap= hap + su ;
+
+    }
+                document.write('합계='+ hap);
+  }
+
+
+     var k=0, gtotal=0;
+    function mytest(){
+        document.write( 'while반복문 연습<br>');
+        while (k<10){
+          k=k+1;
+         if(k==5){continue;}
+         document.write(k, ' ');
+         gtotal= gtotal + k;
+        }
+        document.write('gtotal=' + gtotal);
+   }
+
+</script>
+
+<script>
+</script>
+</head>
+<body>
+    
+    <h2> 03testwhile.html </h2>
+    <button onclick="mynumber()">for반복문</button>
+    <button onclick="mytest();">while반복문</button>
+    <div id="display"></div>
+</body>
+</html>
